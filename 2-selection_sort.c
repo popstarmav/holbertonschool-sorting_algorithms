@@ -3,7 +3,7 @@
 /**
  * selection_sort - Sorts an array of integers in ascending order
  *                   using the Selection sort algorithm.
- * @array: Array of integers to sort.
+ * @array: Array to sort.
  * @size: Size of the array.
  */
 void selection_sort(int *array, size_t size)
@@ -12,7 +12,8 @@ void selection_sort(int *array, size_t size)
         return;
 
     size_t i, j, min_index;
-    
+    int temp;
+
     for (i = 0; i < size - 1; ++i)
     {
         min_index = i;
@@ -26,9 +27,9 @@ void selection_sort(int *array, size_t size)
         if (min_index != i)
         {
             /* Swap elements */
-            int tmp = array[i];
+            temp = array[i];
             array[i] = array[min_index];
-            array[min_index] = tmp;
+            array[min_index] = temp;
 
             /* Print the array after each swap */
             print_array(array, size);
